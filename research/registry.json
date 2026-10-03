@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "purpose": "retrospective_pilot_inventory_only",
+  "applications": [
+    {
+      "app_id": "ticket_lab_v1",
+      "family": "synthetic_ticket_service",
+      "origin": "self_authored",
+      "pairs": [
+        {"pair_id": "P01", "split": "dev", "variants": ["P01_vuln", "P01_fixed"]},
+        {"pair_id": "P02", "split": "pilot_formal", "variants": ["P02_vuln", "P02_fixed"]},
+        {"pair_id": "P03", "split": "pilot_formal", "variants": ["P03_vuln", "P03_fixed"]},
+        {"pair_id": "P04", "split": "dev", "variants": ["P04_vuln", "P04_fixed"]},
+        {"pair_id": "P05", "split": "pilot_formal", "variants": ["P05_vuln", "P05_fixed"]},
+        {"pair_id": "P06", "split": "pilot_formal", "variants": ["P06_vuln", "P06_fixed"]}
+      ]
+    }
+  ]
+}

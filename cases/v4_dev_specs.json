@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "pair_id": "T05", "split": "dev", "public_task_id": "V4D-7K2",
+      "target_method": "POST", "target_path": "/tickets/501/priority",
+      "request_body": {"priority": "high"},
+      "target_object": {"kind": "ticket", "id": 501, "field": "priority"},
+      "test_identities": ["A", "B", "M"],
+      "control_identity": "B", "control_path": "/tickets/501/priority",
+      "visible_policy": "工单 501 属于 B，共享给 A 阅读，优先级初始为 normal。只有主人或管理员可调整优先级；共享阅读不授予更改权。B 可读取优先级。"
+    },
+    {
+      "pair_id": "T06", "split": "dev", "public_task_id": "V4D-3M8",
+      "target_method": "POST", "target_path": "/tickets/502/escalate",
+      "request_body": null,
+      "target_object": {"kind": "ticket", "id": 502, "field": "priority"},
+      "test_identities": ["A", "B", "M"],
+      "control_identity": "B", "control_path": "/tickets/502/priority",
+      "visible_policy": "工单 502 属于 A，共享给 B 阅读，优先级初始为 normal。升级为 escalated 是仅管理员 M 可使用的功能，连主人 A 也无权升级。B 可读取优先级。"
+    },
+    {
+      "pair_id": "E05", "split": "dev", "public_task_id": "V4D-9P4",
+      "target_method": "POST", "target_path": "/claims/701/change_cost_center",
+      "request_body": {"cost_center": "dept-A"},
+      "target_object": {"kind": "claim", "id": 701, "field": "cost_center"},
+      "test_identities": ["A", "B", "M"],
+      "control_identity": "B", "control_path": "/claims/701/cost_center",
+      "visible_policy": "申请 701 属于 B，摘要共享给 A，成本中心初始为 dept-B。只有申请主人能修改成本中心；共享摘要不能代替主人授权。B 可读取成本中心。"
+    },
+    {
+      "pair_id": "E06", "split": "dev", "public_task_id": "V4D-2R6",
+      "target_method": "POST", "target_path": "/claims/702/mark_reviewed",
+      "request_body": null,
+      "target_object": {"kind": "claim", "id": 702, "field": "review_state"},
+      "test_identities": ["A", "B", "M"],
+      "control_identity": "B", "control_path": "/claims/702/review_state",
+      "visible_policy": "申请 702 属于 A，摘要共享给 B，复核状态初始为 pending。标记 reviewed 是仅财务 M 可使用的功能，主人 A 无权自行标记。B 可读取复核状态。"
+    }
+  ]
+}

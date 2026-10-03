@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "pair_id": "T07", "split": "reserved", "public_task_id": "V4R-8Q2",
+      "target_method": "POST", "target_path": "/tickets/601/priority",
+      "request_body": {"priority": "high"},
+      "target_object": {"kind": "ticket", "id": 601, "field": "priority"},
+      "test_identities": ["A", "B", "M"],
+      "control_identity": "B", "control_path": "/tickets/601/priority",
+      "visible_policy": "工单 601 属于 B，只共享给 A 阅读，优先级初始为 normal。只有主人或管理员可以把优先级改为 high；共享阅读不包含修改权。B 可读取优先级。"
+    },
+    {
+      "pair_id": "T08", "split": "reserved", "public_task_id": "V4R-1F9",
+      "target_method": "POST", "target_path": "/tickets/602/escalate",
+      "request_body": null,
+      "target_object": {"kind": "ticket", "id": 602, "field": "priority"},
+      "test_identities": ["A", "B", "M"],
+      "control_identity": "B", "control_path": "/tickets/602/priority",
+      "visible_policy": "工单 602 属于 A，并共享给 B 阅读，优先级初始为 normal。升级为 escalated 是仅管理员 M 可执行的功能；主人 A 不是管理员也无权升级。B 可读取优先级。"
+    },
+    {
+      "pair_id": "T09", "split": "reserved", "public_task_id": "V4R-6L4",
+      "target_method": "POST", "target_path": "/tickets/603/priority",
+      "request_body": {"priority": "high"},
+      "target_object": {"kind": "ticket", "id": 603, "field": "priority"},
+      "test_identities": ["A", "B", "M"],
+      "control_identity": "B", "control_path": "/tickets/603/priority",
+      "visible_policy": "工单 603 的主人是 B，A 只有共享阅读权限，优先级当前为 normal。调整优先级需要主人或管理员身份；读权限不授予写权限。B 可读取优先级。"
+    },
+    {
+      "pair_id": "T10", "split": "reserved", "public_task_id": "V4R-4C7",
+      "target_method": "POST", "target_path": "/tickets/604/escalate",
+      "request_body": null,
+      "target_object": {"kind": "ticket", "id": 604, "field": "priority"},
+      "test_identities": ["A", "B", "M"],
+      "control_identity": "B", "control_path": "/tickets/604/priority",
+      "visible_policy": "工单 604 属于 A，B 是共享阅读者，优先级初始为 normal。escalate 操作只给管理员 M；对象主人 A 也不能使用该功能。B 可读取优先级。"
+    },
+    {
+      "pair_id": "T11", "split": "reserved", "public_task_id": "V4R-2N5",
+      "target_method": "POST", "target_path": "/tickets/605/priority",
+      "request_body": {"priority": "high"},
+      "target_object": {"kind": "ticket", "id": 605, "field": "priority"},
+      "test_identities": ["A", "B", "M"],
+      "control_identity": "B", "control_path": "/tickets/605/priority",
+      "visible_policy": "工单 605 归 B 所有，A 只能查看共享内容，优先级初始为 normal。只有主人或管理员能修改优先级；共享查看不能修改。B 可读取优先级。"
+    },
+    {
+      "pair_id": "T12", "split": "reserved", "public_task_id": "V4R-9H3",
+      "target_method": "POST", "target_path": "/tickets/606/escalate",
+      "request_body": null,
+      "target_object": {"kind": "ticket", "id": 606, "field": "priority"},
+      "test_identities": ["A", "B", "M"],
+      "control_identity": "B", "control_path": "/tickets/606/priority",
+      "visible_policy": "工单 606 属于 A，B 可共享阅读，优先级初始为 normal。升级到 escalated 属于管理员 M 的功能，A 作为主人仍不能执行。B 可读取优先级。"
+    },
+    {
+      "pair_id": "E07", "split": "reserved", "public_task_id": "V4R-7D1",
+      "target_method": "POST", "target_path": "/claims/801/change_cost_center",
+      "request_body": {"cost_center": "dept-A"},
+      "target_object": {"kind": "claim", "id": 801, "field": "cost_center"},
+      "test_identities": ["A", "B", "M"],
+      "control_identity": "B", "control_path": "/claims/801/cost_center",
+      "visible_policy": "申请 801 属于 B，A 只能阅读共享摘要，成本中心初始为 dept-B。只有申请主人能把成本中心改为 dept-A；共享摘要权限不是修改权限。B 可读取成本中心。"
+    },
+    {
+      "pair_id": "E08", "split": "reserved", "public_task_id": "V4R-5S8",
+      "target_method": "POST", "target_path": "/claims/802/mark_reviewed",
+      "request_body": null,
+      "target_object": {"kind": "claim", "id": 802, "field": "review_state"},
+      "test_identities": ["A", "B", "M"],
+      "control_identity": "B", "control_path": "/claims/802/review_state",
+      "visible_policy": "申请 802 属于 A，B 可阅读摘要，复核状态初始为 pending。标记 reviewed 是仅财务 M 能执行的功能；申请主人 A 不是财务也无权标记。B 可读取复核状态。"
+    },
+    {
+      "pair_id": "E09", "split": "reserved", "public_task_id": "V4R-3W6",
+      "target_method": "POST", "target_path": "/claims/803/change_cost_center",
+      "request_body": {"cost_center": "dept-A"},
+      "target_object": {"kind": "claim", "id": 803, "field": "cost_center"},
+      "test_identities": ["A", "B", "M"],
+      "control_identity": "B", "control_path": "/claims/803/cost_center",
+      "visible_policy": "申请 803 的主人是 B，A 只被授予摘要阅读，成本中心初始为 dept-B。修改成本中心需要申请主人身份；摘要阅读不能替代主人授权。B 可读取成本中心。"
+    },
+    {
+      "pair_id": "E10", "split": "reserved", "public_task_id": "V4R-0J4",
+      "target_method": "POST", "target_path": "/claims/804/mark_reviewed",
+      "request_body": null,
+      "target_object": {"kind": "claim", "id": 804, "field": "review_state"},
+      "test_identities": ["A", "B", "M"],
+      "control_identity": "B", "control_path": "/claims/804/review_state",
+      "visible_policy": "申请 804 属于 A，B 是共享摘要读者，复核状态初始为 pending。mark_reviewed 功能只开放给财务 M；主人 A 不能自行复核。B 可读取复核状态。"
+    },
+    {
+      "pair_id": "E11", "split": "reserved", "public_task_id": "V4R-6Y0",
+      "target_method": "POST", "target_path": "/claims/805/change_cost_center",
+      "request_body": {"cost_center": "dept-A"},
+      "target_object": {"kind": "claim", "id": 805, "field": "cost_center"},
+      "test_identities": ["A", "B", "M"],
+      "control_identity": "B", "control_path": "/claims/805/cost_center",
+      "visible_policy": "申请 805 属于 B，A 可查看共享摘要，成本中心初始为 dept-B。只有申请主人可以修改成本中心；共享摘要不授予成本中心写权限。B 可读取成本中心。"
+    },
+    {
+      "pair_id": "E12", "split": "reserved", "public_task_id": "V4R-8K5",
+      "target_method": "POST", "target_path": "/claims/806/mark_reviewed",
+      "request_body": null,
+      "target_object": {"kind": "claim", "id": 806, "field": "review_state"},
+      "test_identities": ["A", "B", "M"],
+      "control_identity": "B", "control_path": "/claims/806/review_state",
+      "visible_policy": "申请 806 属于 A，并向 B 共享摘要，复核状态初始为 pending。标记 reviewed 是财务 M 的专属功能，普通申请主人 A 无权执行。B 可读取复核状态。"
+    }
+  ]
+}

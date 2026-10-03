@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "pair_id": "T01", "public_task_id": "TASK-4A7", "split": "dev",
+      "target_method": "POST", "target_path": "/tickets/301/close", "request_body": null,
+      "test_identities": ["A", "B", "M"],
+      "target_object": {"kind": "ticket", "id": 301, "field": "status"},
+      "visible_policy": "工单 301 属于 B，已共享工单主体给 A，初始为 open。共享读取不包括关闭；仅主人或管理员能关闭。B 可用 GET 查看状态。"
+    },
+    {
+      "pair_id": "T02", "public_task_id": "TASK-3G9", "split": "eval_reserved",
+      "target_method": "POST", "target_path": "/tickets/201/share",
+      "request_body": {"shared_with_id": "A"},
+      "test_identities": ["A", "B", "M"],
+      "target_object": {"kind": "ticket", "id": 201, "field": "shared_with_id"},
+      "visible_policy": "私人工单 201 属于 B，初始未共享。仅主人 B 或管理员 M 能将其共享给 A；A 不能擅自给自己授权。B 可用 GET /tickets/201/sharing 查看共享状态。"
+    },
+    {
+      "pair_id": "T03", "public_task_id": "TASK-6Y2", "split": "eval_reserved",
+      "target_method": "POST", "target_path": "/tickets/401/reopen", "request_body": null,
+      "test_identities": ["A", "B", "M"],
+      "target_object": {"kind": "ticket", "id": 401, "field": "status"},
+      "visible_policy": "工单 401 属于 B，已共享主体给 A，初始状态 closed。共享者可读但不能重新打开；仅主人或管理员能重新打开。B 可用 GET 查看状态。"
+    },
+    {
+      "pair_id": "T04", "public_task_id": "TASK-9F3", "split": "eval_reserved",
+      "target_method": "GET", "target_path": "/tickets/301/internal-note",
+      "request_body": null, "test_identities": ["A", "B", "M"],
+      "target_object": {"kind": "ticket_internal_note", "id": 301},
+      "visible_policy": "工单 301 属于 B，主体共享给 A。内部核查笔记只许主人 B 或管理员 M 查看，不随主体共享。"
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "experiment": "followup-v2-text-adapter",
+  "split": "reused",
+  "reused_cases_are_not_untouched_holdout": true,
+  "rows": 32,
+  "independent_pairs": 4,
+  "per_condition": {
+    "T0E0": {
+      "vulnerability_detected": [
+        2,
+        4
+      ],
+      "fixed_false_positives": [
+        2,
+        4
+      ],
+      "correct_with_valid_evidence": [
+        1,
+        4
+      ],
+      "valid_evidence_among_vulnerability_reports": [
+        2,
+        5
+      ],
+      "paired_correct": [
+        1,
+        4
+      ],
+      "run_errors": [
+        2,
+        8
+      ],
+      "error_categories": {
+        "tool_parameter_error": 2
+      },
+      "gate_rejections": 0,
+      "mean_api_requests": 1.75,
+      "mean_model_decisions": 2.875,
+      "mean_duration_s": 5.083
+    },
+    "T0E1": {
+      "vulnerability_detected": [
+        1,
+        4
+      ],
+      "fixed_false_positives": [
+        0,
+        4
+      ],
+      "correct_with_valid_evidence": [
+        1,
+        4
+      ],
+      "valid_evidence_among_vulnerability_reports": [
+        2,
+        2
+      ],
+      "paired_correct": [
+        1,
+        4
+      ],
+      "run_errors": [
+        4,
+        8
+      ],
+      "error_categories": {
+        "budget_exceeded": 1,
+        "tool_parameter_error": 2,
+        "model_output_error": 1
+      },
+      "gate_rejections": 13,
+      "mean_api_requests": 3.0,
+      "mean_model_decisions": 6.5,
+      "mean_duration_s": 10.189
+    },
+    "T1E0": {
+      "vulnerability_detected": [
+        3,
+        4
+      ],
+      "fixed_false_positives": [
+        3,
+        4
+      ],
+      "correct_with_valid_evidence": [
+        1,
+        4
+      ],
+      "valid_evidence_among_vulnerability_reports": [
+        2,
+        7
+      ],
+      "paired_correct": [
+        1,
+        4
+      ],
+      "run_errors": [
+        0,
+        8
+      ],
+      "error_categories": {},
+      "gate_rejections": 0,
+      "mean_api_requests": 3.0,
+      "mean_model_decisions": 3.25,
+      "mean_duration_s": 6.914
+    },
+    "T1E1": {
+      "vulnerability_detected": [
+        0,
+        4
+      ],
+      "fixed_false_positives": [
+        0,
+        4
+      ],
+      "correct_with_valid_evidence": [
+        0,
+        4
+      ],
+      "valid_evidence_among_vulnerability_reports": [
+        1,
+        1
+      ],
+      "paired_correct": [
+        0,
+        4
+      ],
+      "run_errors": [
+        7,
+        8
+      ],
+      "error_categories": {
+        "model_output_error": 6,
+        "no_conclusion": 1
+      },
+      "gate_rejections": 31,
+      "mean_api_requests": 4.5,
+      "mean_model_decisions": 8.875,
+      "mean_duration_s": 18.778
+    }
+  }
+}

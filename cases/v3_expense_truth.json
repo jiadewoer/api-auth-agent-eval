@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "cases": {
+    "E01_fixed": {
+      "variant": "fixed",
+      "ground_truth": false,
+      "vulnerability_type": "BOLA",
+      "oracle_kind": "write_state",
+      "oracle_table": "claims",
+      "oracle_row_id": 501,
+      "oracle_field": "payee_id",
+      "before": "payee-B",
+      "attempted_after": "payee-A"
+    },
+    "E01_vuln": {
+      "variant": "vuln",
+      "ground_truth": true,
+      "vulnerability_type": "BOLA",
+      "oracle_kind": "write_state",
+      "oracle_table": "claims",
+      "oracle_row_id": 501,
+      "oracle_field": "payee_id",
+      "before": "payee-B",
+      "attempted_after": "payee-A"
+    },
+    "E02_fixed": {
+      "variant": "fixed", "ground_truth": false, "vulnerability_type": "BFLA",
+      "oracle_kind": "write_state", "oracle_table": "claims", "oracle_row_id": 501,
+      "oracle_field": "status", "before": "submitted", "attempted_after": "approved"
+    },
+    "E02_vuln": {
+      "variant": "vuln", "ground_truth": true, "vulnerability_type": "BFLA",
+      "oracle_kind": "write_state", "oracle_table": "claims", "oracle_row_id": 501,
+      "oracle_field": "status", "before": "submitted", "attempted_after": "approved"
+    },
+    "E03_fixed": {
+      "variant": "fixed", "ground_truth": false, "vulnerability_type": "BOLA",
+      "oracle_kind": "write_state", "oracle_table": "claims", "oracle_row_id": 601,
+      "oracle_field": "payee_id", "before": "payee-B", "attempted_after": "payee-A"
+    },
+    "E03_vuln": {
+      "variant": "vuln", "ground_truth": true, "vulnerability_type": "BOLA",
+      "oracle_kind": "write_state", "oracle_table": "claims", "oracle_row_id": 601,
+      "oracle_field": "payee_id", "before": "payee-B", "attempted_after": "payee-A"
+    },
+    "E04_fixed": {
+      "variant": "fixed", "ground_truth": false, "vulnerability_type": "BOLA",
+      "oracle_kind": "read_body", "protected_markers": ["claim-created"],
+      "protected_record": {"claim_id": 601, "actor_id": "B", "action": "claim-created"}
+    },
+    "E04_vuln": {
+      "variant": "vuln", "ground_truth": true, "vulnerability_type": "BOLA",
+      "oracle_kind": "read_body", "protected_markers": ["claim-created"],
+      "protected_record": {"claim_id": 601, "actor_id": "B", "action": "claim-created"}
+    }
+  }
+}

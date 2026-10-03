@@ -1,0 +1,64 @@
+{
+  "manifest_version": 1,
+  "hypothesis": "B's evidence-check prompt may reduce false positives but can cost decisions or requests.",
+  "agents": {
+    "baseline": {
+      "version": "A",
+      "prompt_path": "agent/prompts/baseline.txt",
+      "prompt_sha256": "7777a387c7011f7c5fc14773abe726a32f582c017c68dc31ec5f06bdc0b0eaef"
+    },
+    "evidence": {
+      "version": "B",
+      "prompt_path": "agent/prompts/evidence_check.txt",
+      "prompt_sha256": "165de3ecaf8be8dc53d582d7d1dc51107823d862da29c372e0c2255635c6620d"
+    }
+  },
+  "model_tag": "qwen3:4b-instruct",
+  "model_digest_prefix": "0edcdef34593",
+  "actual_model_digest": null,
+  "temperature": 0.2,
+  "num_ctx": 4096,
+  "tool_spec_sha256": "341bb7d47a321c4f58e95ddf454922852f11723db76a21a8b8c8462f36a26c83",
+  "source_sha256": {
+    "agent/config.py": "9622826f22ae9bcae2f0c87bd132c5474684426d11045a80318f7f083be3b39b",
+    "agent/runner.py": "ee1b7a8661537ee6b934afc68d0773a6ec439f8ea2371b45a7e3f7fdeb8dd5ac",
+    "agent/tools.py": "6c5bf6baf1d5b55a9eb95b99e0c2dde17affbc3ddd75687f853c42d22c0fd5e2",
+    "agent/finding.py": "7b5ade60d15f66f81e907246a5de776187b855858f25ee10b27be203cc5d05b5",
+    "app/main.py": "38229c79bbba966c4d6b94a449a286fd71f7299b8b8e9bfbd3eca2c732617536",
+    "app/auth.py": "38faf452fc0c2ba6cf8cfc9e0f53f1c8ad9053e3142a0d5bcb0377ae77338501",
+    "app/permissions.py": "52941f387e8b32c70665cf364412936f75065311e14ce1a81d07a24cda93cd1d",
+    "app/db.py": "ee4778945e8cafb7394a97c6a4536bc1791af7b2d57735cbf5cc22323966bd9b",
+    "cases/catalog.py": "0d1b39f7d339fbd1165979e48ac4f7354095365b96deb085803ac310fa07128d",
+    "cases/specs.json": "6e58f2e14836ebe4f774601edd527045748b47b39107a01a048f77e899fe7c33",
+    "cases/truth.json": "57c9347cb2b05857af253b18153d7e55c69c12e1cc44cf6228ae14365ab72107",
+    "eval/grade.py": "10d00b931ae22570a0512d81d625f56131d615ab1dc805dba9dc6a9cb70ad43c",
+    "eval/run_cases.py": "9fc1329add96a3359ea88c0837762350e97adef174a603f4877427f66c586634"
+  },
+  "request_limit": 8,
+  "decision_limit": 16,
+  "timeout_seconds": 120.0,
+  "grader_version": "1",
+  "cases": {
+    "dev": [
+      "P01_vuln",
+      "P01_fixed",
+      "P04_vuln",
+      "P04_fixed"
+    ],
+    "holdout": [
+      "P02_vuln",
+      "P02_fixed",
+      "P03_vuln",
+      "P03_fixed",
+      "P05_vuln",
+      "P05_fixed",
+      "P06_vuln",
+      "P06_fixed"
+    ]
+  },
+  "runs_per_case": null,
+  "selected_split": null,
+  "test_started_at": null,
+  "python_version": null,
+  "dependency_versions": null
+}

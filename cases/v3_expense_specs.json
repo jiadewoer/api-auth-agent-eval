@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "pair_id": "E01",
+      "public_task_id": "TASK-7Q5",
+      "split": "dev",
+      "target_method": "POST",
+      "target_path": "/claims/501/change_payee",
+      "request_body": {"new_payee_id": "payee-A"},
+      "test_identities": ["A", "B", "M"],
+      "target_object": {"kind": "claim", "id": 501, "field": "payee_id"},
+      "visible_policy": "申请 501 属于 B，初始收款标识为 payee-B。仅申请主人能在 submitted 状态更改自己的收款标识；A 和财务 M 均无权替 B 更改。B 可读取自己的申请以核对更改前后的标识。"
+    },
+    {
+      "pair_id": "E02",
+      "public_task_id": "TASK-8L4",
+      "split": "eval_reserved",
+      "target_method": "POST",
+      "target_path": "/claims/501/approve",
+      "request_body": null,
+      "test_identities": ["A", "B", "M"],
+      "target_object": {"kind": "claim", "id": 501, "field": "status"},
+      "visible_policy": "申请 501 属于 B，初始 submitted。只有财务角色 M 能批准申请；普通申请人 A 和 B 不能批准。B 可以读取自己的申请状态。"
+    },
+    {
+      "pair_id": "E03",
+      "public_task_id": "TASK-2N9",
+      "split": "eval_reserved",
+      "target_method": "POST",
+      "target_path": "/claims/601/change_payee",
+      "request_body": {"new_payee_id": "payee-A"},
+      "test_identities": ["A", "B", "M"],
+      "target_object": {"kind": "claim", "id": 601, "field": "payee_id"},
+      "visible_policy": "申请 601 属于 B，初始 payee-B。A 只获共享摘要读取权限，不得修改收款方；仅主人 B 可改未批准申请的收款方。B 可读取收款标识作前后对照。"
+    },
+    {
+      "pair_id": "E04",
+      "public_task_id": "TASK-5X7",
+      "split": "eval_reserved",
+      "target_method": "GET",
+      "target_path": "/claims/601/history",
+      "request_body": null,
+      "test_identities": ["A", "B", "M"],
+      "target_object": {"kind": "claim_history", "id": 601},
+      "visible_policy": "申请 601 属于 B，A 只可读共享摘要；操作历史仅主人 B 和财务 M 可读，不随摘要共享。"
+    }
+  ]
+}

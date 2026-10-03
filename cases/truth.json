@@ -1,0 +1,101 @@
+{
+  "schema_version": 2,
+  "cases": {
+    "P01_fixed": {
+      "variant": "fixed",
+      "ground_truth": false,
+      "vulnerability_type": "BOLA",
+      "oracle_kind": "read_body",
+      "protected_markers": ["b-private-201"],
+      "expected_unauthorized_status": 403
+    },
+    "P01_vuln": {
+      "variant": "vuln",
+      "ground_truth": true,
+      "vulnerability_type": "BOLA",
+      "oracle_kind": "read_body",
+      "protected_markers": ["b-private-201"],
+      "expected_unauthorized_status": 200
+    },
+    "P02_fixed": {
+      "variant": "fixed",
+      "ground_truth": false,
+      "vulnerability_type": "BOLA",
+      "oracle_kind": "read_body",
+      "protected_markers": ["comment-private-201"],
+      "expected_unauthorized_status": 403
+    },
+    "P02_vuln": {
+      "variant": "vuln",
+      "ground_truth": true,
+      "vulnerability_type": "BOLA",
+      "oracle_kind": "read_body",
+      "protected_markers": ["comment-private-201"],
+      "expected_unauthorized_status": 200
+    },
+    "P03_fixed": {
+      "variant": "fixed",
+      "ground_truth": false,
+      "vulnerability_type": "BOLA",
+      "oracle_kind": "write_state",
+      "protected_markers": ["tickets.201.status"],
+      "expected_unauthorized_status": 403
+    },
+    "P03_vuln": {
+      "variant": "vuln",
+      "ground_truth": true,
+      "vulnerability_type": "BOLA",
+      "oracle_kind": "write_state",
+      "protected_markers": ["tickets.201.status"],
+      "expected_unauthorized_status": 200
+    },
+    "P04_fixed": {
+      "variant": "fixed",
+      "ground_truth": false,
+      "vulnerability_type": "BFLA",
+      "oracle_kind": "read_body",
+      "protected_markers": ["b-private-201", "comment-private-301"],
+      "expected_unauthorized_status": 403
+    },
+    "P04_vuln": {
+      "variant": "vuln",
+      "ground_truth": true,
+      "vulnerability_type": "BFLA",
+      "oracle_kind": "read_body",
+      "protected_markers": ["b-private-201", "comment-private-301"],
+      "expected_unauthorized_status": 200
+    },
+    "P05_fixed": {
+      "variant": "fixed",
+      "ground_truth": false,
+      "vulnerability_type": "BFLA",
+      "oracle_kind": "write_state",
+      "protected_markers": ["tickets.201.owner_id"],
+      "expected_unauthorized_status": 403
+    },
+    "P05_vuln": {
+      "variant": "vuln",
+      "ground_truth": true,
+      "vulnerability_type": "BFLA",
+      "oracle_kind": "write_state",
+      "protected_markers": ["tickets.201.owner_id"],
+      "expected_unauthorized_status": 200
+    },
+    "P06_fixed": {
+      "variant": "fixed",
+      "ground_truth": false,
+      "vulnerability_type": "BFLA",
+      "oracle_kind": "read_body",
+      "protected_markers": ["fixture-created", "2026-01-01T00:00:00Z"],
+      "expected_unauthorized_status": 403
+    },
+    "P06_vuln": {
+      "variant": "vuln",
+      "ground_truth": true,
+      "vulnerability_type": "BFLA",
+      "oracle_kind": "read_body",
+      "protected_markers": ["fixture-created", "2026-01-01T00:00:00Z"],
+      "expected_unauthorized_status": 200
+    }
+  }
+}

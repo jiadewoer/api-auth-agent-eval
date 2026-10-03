@@ -1,0 +1,245 @@
+{
+  "schema_version": 1,
+  "cases": {
+    "T13_fixed": {
+      "ground_truth": false,
+      "vulnerability_type": "BOLA",
+      "oracle_kind": "write_state",
+      "oracle_table": "tickets",
+      "oracle_row_id": 901,
+      "oracle_field": "priority",
+      "before": "normal",
+      "attempted_after": "high"
+    },
+    "T13_vuln": {
+      "ground_truth": true,
+      "vulnerability_type": "BOLA",
+      "oracle_kind": "write_state",
+      "oracle_table": "tickets",
+      "oracle_row_id": 901,
+      "oracle_field": "priority",
+      "before": "normal",
+      "attempted_after": "high"
+    },
+    "T14_fixed": {
+      "ground_truth": false,
+      "vulnerability_type": "BFLA",
+      "oracle_kind": "write_state",
+      "oracle_table": "tickets",
+      "oracle_row_id": 902,
+      "oracle_field": "priority",
+      "before": "normal",
+      "attempted_after": "escalated"
+    },
+    "T14_vuln": {
+      "ground_truth": true,
+      "vulnerability_type": "BFLA",
+      "oracle_kind": "write_state",
+      "oracle_table": "tickets",
+      "oracle_row_id": 902,
+      "oracle_field": "priority",
+      "before": "normal",
+      "attempted_after": "escalated"
+    },
+    "T15_fixed": {
+      "ground_truth": false,
+      "vulnerability_type": "BOLA",
+      "oracle_kind": "write_state",
+      "oracle_table": "tickets",
+      "oracle_row_id": 903,
+      "oracle_field": "priority",
+      "before": "normal",
+      "attempted_after": "high"
+    },
+    "T15_vuln": {
+      "ground_truth": true,
+      "vulnerability_type": "BOLA",
+      "oracle_kind": "write_state",
+      "oracle_table": "tickets",
+      "oracle_row_id": 903,
+      "oracle_field": "priority",
+      "before": "normal",
+      "attempted_after": "high"
+    },
+    "T16_fixed": {
+      "ground_truth": false,
+      "vulnerability_type": "BFLA",
+      "oracle_kind": "write_state",
+      "oracle_table": "tickets",
+      "oracle_row_id": 904,
+      "oracle_field": "priority",
+      "before": "normal",
+      "attempted_after": "escalated"
+    },
+    "T16_vuln": {
+      "ground_truth": true,
+      "vulnerability_type": "BFLA",
+      "oracle_kind": "write_state",
+      "oracle_table": "tickets",
+      "oracle_row_id": 904,
+      "oracle_field": "priority",
+      "before": "normal",
+      "attempted_after": "escalated"
+    },
+    "T17_fixed": {
+      "ground_truth": false,
+      "vulnerability_type": "BOLA",
+      "oracle_kind": "write_state",
+      "oracle_table": "tickets",
+      "oracle_row_id": 905,
+      "oracle_field": "priority",
+      "before": "normal",
+      "attempted_after": "high"
+    },
+    "T17_vuln": {
+      "ground_truth": true,
+      "vulnerability_type": "BOLA",
+      "oracle_kind": "write_state",
+      "oracle_table": "tickets",
+      "oracle_row_id": 905,
+      "oracle_field": "priority",
+      "before": "normal",
+      "attempted_after": "high"
+    },
+    "T18_fixed": {
+      "ground_truth": false,
+      "vulnerability_type": "BFLA",
+      "oracle_kind": "write_state",
+      "oracle_table": "tickets",
+      "oracle_row_id": 906,
+      "oracle_field": "priority",
+      "before": "normal",
+      "attempted_after": "escalated"
+    },
+    "T18_vuln": {
+      "ground_truth": true,
+      "vulnerability_type": "BFLA",
+      "oracle_kind": "write_state",
+      "oracle_table": "tickets",
+      "oracle_row_id": 906,
+      "oracle_field": "priority",
+      "before": "normal",
+      "attempted_after": "escalated"
+    },
+    "E13_fixed": {
+      "ground_truth": false,
+      "vulnerability_type": "BOLA",
+      "oracle_kind": "write_state",
+      "oracle_table": "claims",
+      "oracle_row_id": 1001,
+      "oracle_field": "cost_center",
+      "before": "dept-B",
+      "attempted_after": "dept-A"
+    },
+    "E13_vuln": {
+      "ground_truth": true,
+      "vulnerability_type": "BOLA",
+      "oracle_kind": "write_state",
+      "oracle_table": "claims",
+      "oracle_row_id": 1001,
+      "oracle_field": "cost_center",
+      "before": "dept-B",
+      "attempted_after": "dept-A"
+    },
+    "E14_fixed": {
+      "ground_truth": false,
+      "vulnerability_type": "BFLA",
+      "oracle_kind": "write_state",
+      "oracle_table": "claims",
+      "oracle_row_id": 1002,
+      "oracle_field": "review_state",
+      "before": "pending",
+      "attempted_after": "reviewed"
+    },
+    "E14_vuln": {
+      "ground_truth": true,
+      "vulnerability_type": "BFLA",
+      "oracle_kind": "write_state",
+      "oracle_table": "claims",
+      "oracle_row_id": 1002,
+      "oracle_field": "review_state",
+      "before": "pending",
+      "attempted_after": "reviewed"
+    },
+    "E15_fixed": {
+      "ground_truth": false,
+      "vulnerability_type": "BOLA",
+      "oracle_kind": "write_state",
+      "oracle_table": "claims",
+      "oracle_row_id": 1003,
+      "oracle_field": "cost_center",
+      "before": "dept-B",
+      "attempted_after": "dept-A"
+    },
+    "E15_vuln": {
+      "ground_truth": true,
+      "vulnerability_type": "BOLA",
+      "oracle_kind": "write_state",
+      "oracle_table": "claims",
+      "oracle_row_id": 1003,
+      "oracle_field": "cost_center",
+      "before": "dept-B",
+      "attempted_after": "dept-A"
+    },
+    "E16_fixed": {
+      "ground_truth": false,
+      "vulnerability_type": "BFLA",
+      "oracle_kind": "write_state",
+      "oracle_table": "claims",
+      "oracle_row_id": 1004,
+      "oracle_field": "review_state",
+      "before": "pending",
+      "attempted_after": "reviewed"
+    },
+    "E16_vuln": {
+      "ground_truth": true,
+      "vulnerability_type": "BFLA",
+      "oracle_kind": "write_state",
+      "oracle_table": "claims",
+      "oracle_row_id": 1004,
+      "oracle_field": "review_state",
+      "before": "pending",
+      "attempted_after": "reviewed"
+    },
+    "E17_fixed": {
+      "ground_truth": false,
+      "vulnerability_type": "BOLA",
+      "oracle_kind": "write_state",
+      "oracle_table": "claims",
+      "oracle_row_id": 1005,
+      "oracle_field": "cost_center",
+      "before": "dept-B",
+      "attempted_after": "dept-A"
+    },
+    "E17_vuln": {
+      "ground_truth": true,
+      "vulnerability_type": "BOLA",
+      "oracle_kind": "write_state",
+      "oracle_table": "claims",
+      "oracle_row_id": 1005,
+      "oracle_field": "cost_center",
+      "before": "dept-B",
+      "attempted_after": "dept-A"
+    },
+    "E18_fixed": {
+      "ground_truth": false,
+      "vulnerability_type": "BFLA",
+      "oracle_kind": "write_state",
+      "oracle_table": "claims",
+      "oracle_row_id": 1006,
+      "oracle_field": "review_state",
+      "before": "pending",
+      "attempted_after": "reviewed"
+    },
+    "E18_vuln": {
+      "ground_truth": true,
+      "vulnerability_type": "BFLA",
+      "oracle_kind": "write_state",
+      "oracle_table": "claims",
+      "oracle_row_id": 1006,
+      "oracle_field": "review_state",
+      "before": "pending",
+      "attempted_after": "reviewed"
+    }
+  }
+}

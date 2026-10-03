@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "purpose": "researcher_authored_cases_reserved_from_agent_tuning",
+  "applications": [
+    {
+      "app_id": "ticket_lab_v3",
+      "family": "ticket_workflow",
+      "module": "ticket_v3.main",
+      "pairs": [
+        {"pair_id": "T01", "split": "dev", "variants": ["T01_fixed", "T01_vuln"]},
+        {"pair_id": "T02", "split": "eval_reserved", "variants": ["T02_fixed", "T02_vuln"]},
+        {"pair_id": "T03", "split": "eval_reserved", "variants": ["T03_fixed", "T03_vuln"]},
+        {"pair_id": "T04", "split": "eval_reserved", "variants": ["T04_fixed", "T04_vuln"]}
+      ]
+    },
+    {
+      "app_id": "expense_lab_v1",
+      "family": "expense_claims",
+      "module": "expense_app.main",
+      "pairs": [
+        {"pair_id": "E01", "split": "dev", "variants": ["E01_fixed", "E01_vuln"]},
+        {"pair_id": "E02", "split": "eval_reserved", "variants": ["E02_fixed", "E02_vuln"]},
+        {"pair_id": "E03", "split": "eval_reserved", "variants": ["E03_fixed", "E03_vuln"]},
+        {"pair_id": "E04", "split": "eval_reserved", "variants": ["E04_fixed", "E04_vuln"]}
+      ]
+    }
+  ]
+}

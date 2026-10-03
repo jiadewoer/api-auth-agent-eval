@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "cases": {
+    "T01_fixed": {"variant": "fixed", "ground_truth": false, "vulnerability_type": "BOLA", "oracle_kind": "write_state", "oracle_table": "tickets", "oracle_row_id": 301, "oracle_field": "status", "before": "open", "attempted_after": "closed"},
+    "T01_vuln": {"variant": "vuln", "ground_truth": true, "vulnerability_type": "BOLA", "oracle_kind": "write_state", "oracle_table": "tickets", "oracle_row_id": 301, "oracle_field": "status", "before": "open", "attempted_after": "closed"},
+    "T02_fixed": {"variant": "fixed", "ground_truth": false, "vulnerability_type": "BOLA", "oracle_kind": "write_state", "oracle_table": "tickets", "oracle_row_id": 201, "oracle_field": "shared_with_id", "before": null, "attempted_after": "A"},
+    "T02_vuln": {"variant": "vuln", "ground_truth": true, "vulnerability_type": "BOLA", "oracle_kind": "write_state", "oracle_table": "tickets", "oracle_row_id": 201, "oracle_field": "shared_with_id", "before": null, "attempted_after": "A"},
+    "T03_fixed": {"variant": "fixed", "ground_truth": false, "vulnerability_type": "BOLA", "oracle_kind": "write_state", "oracle_table": "tickets", "oracle_row_id": 401, "oracle_field": "status", "before": "closed", "attempted_after": "open"},
+    "T03_vuln": {"variant": "vuln", "ground_truth": true, "vulnerability_type": "BOLA", "oracle_kind": "write_state", "oracle_table": "tickets", "oracle_row_id": 401, "oracle_field": "status", "before": "closed", "attempted_after": "open"},
+    "T04_fixed": {"variant": "fixed", "ground_truth": false, "vulnerability_type": "BOLA", "oracle_kind": "read_body", "protected_markers": ["reviewer-note-private-301"]},
+    "T04_vuln": {"variant": "vuln", "ground_truth": true, "vulnerability_type": "BOLA", "oracle_kind": "read_body", "protected_markers": ["reviewer-note-private-301"]}
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "schema_version": 3,
+  "cases": [
+    {
+      "pair_id": "P01",
+      "public_task_id": "TASK-6H2",
+      "split": "dev",
+      "target_method": "GET",
+      "target_path": "/tickets/201",
+      "test_identities": ["A", "B", "M"],
+      "target_object": {"kind": "ticket", "id": 201},
+      "visible_policy": "仅主人、管理员和被明确共享者能读取工单主体。201 属于 B，未共享给 A。"
+    },
+    {
+      "pair_id": "P02",
+      "public_task_id": "TASK-3K7",
+      "split": "holdout",
+      "target_method": "GET",
+      "target_path": "/tickets/201/comments",
+      "test_identities": ["A", "B", "M"],
+      "target_object": {"kind": "ticket_comments", "id": 201},
+      "visible_policy": "私人评论仅允许工单主人或管理员读取。201 属于 B，未共享给 A；301 共享给 A 的只是工单主体，不包含私人评论。"
+    },
+    {
+      "pair_id": "P03",
+      "public_task_id": "TASK-4R8",
+      "split": "holdout",
+      "target_method": "POST",
+      "target_path": "/tickets/201/close",
+      "test_identities": ["A", "B", "M"],
+      "target_object": {"kind": "ticket", "id": 201},
+      "visible_policy": "仅工单主人或管理员能关闭工单。201 属于 B，初始状态为 open；A 无权关闭。"
+    },
+    {
+      "pair_id": "P04",
+      "public_task_id": "TASK-9C4",
+      "split": "dev",
+      "target_method": "GET",
+      "target_path": "/admin/export",
+      "test_identities": ["A", "B", "M"],
+      "target_object": {"kind": "admin_export", "id": "export"},
+      "visible_policy": "导出工单和私人评论仅允许管理员，普通用户无权读取导出数据。"
+    },
+    {
+      "pair_id": "P05",
+      "public_task_id": "TASK-5M3",
+      "split": "holdout",
+      "target_method": "POST",
+      "target_path": "/tickets/201/reassign",
+      "test_identities": ["A", "B", "M"],
+      "target_object": {"kind": "ticket", "id": 201},
+      "visible_policy": "仅管理员能转派工单。201 当前属于 B，普通用户 A 无权将其转派给 A。"
+    },
+    {
+      "pair_id": "P06",
+      "public_task_id": "TASK-8J6",
+      "split": "holdout",
+      "target_method": "GET",
+      "target_path": "/admin/audit",
+      "test_identities": ["A", "B", "M"],
+      "target_object": {"kind": "admin_audit", "id": "audit"},
+      "visible_policy": "审计记录仅允许管理员读取；普通用户 A 无权看到 actor_id、action 和 created_at 等受限字段。"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "status": "pilot_descriptive_only",
+  "warning": "Old cases and tuning invalidate prospective claims",
+  "split": "pilot_formal",
+  "independent_applications": 1,
+  "independent_case_pairs": 4,
+  "repeats_per_case": 2,
+  "attempted_runs": 32,
+  "per_condition": {
+    "baseline": {
+      "attributable_pair_success": [
+        0,
+        8
+      ],
+      "vulnerability_detected": [
+        4,
+        8
+      ],
+      "fixed_false_positives": [
+        5,
+        8
+      ],
+      "technical_failures": [
+        4,
+        16
+      ],
+      "abstentions": [
+        0,
+        16
+      ],
+      "mean_api_requests": 1.875
+    },
+    "evidence": {
+      "attributable_pair_success": [
+        1,
+        8
+      ],
+      "vulnerability_detected": [
+        1,
+        8
+      ],
+      "fixed_false_positives": [
+        2,
+        8
+      ],
+      "technical_failures": [
+        8,
+        16
+      ],
+      "abstentions": [
+        0,
+        16
+      ],
+      "mean_api_requests": 3.625
+    }
+  },
+  "per_application": {
+    "ticket_lab_v1": {
+      "baseline": {
+        "successes": 0,
+        "observations": 8
+      },
+      "evidence": {
+        "successes": 1,
+        "observations": 8
+      }
+    }
+  },
+  "paired_effect_treatment_minus_reference": {
+    "comparison": "evidence - baseline",
+    "primary_endpoint": "attributable_pair_success",
+    "equal_weight_application_difference": 0.125,
+    "per_application_difference": {
+      "ticket_lab_v1": 0.125
+    },
+    "application_cluster_bootstrap_95pct": null,
+    "interval_note": "No cross-application interval with fewer than 5 apps"
+  }
+}

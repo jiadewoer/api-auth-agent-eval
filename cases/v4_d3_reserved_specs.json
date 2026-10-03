@@ -1,0 +1,269 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "pair_id": "T13",
+      "split": "d3_reserved",
+      "public_task_id": "V4D3R-4K9",
+      "target_method": "POST",
+      "target_path": "/tickets/901/priority",
+      "request_body": {
+        "priority": "high"
+      },
+      "target_object": {
+        "kind": "ticket",
+        "id": 901,
+        "field": "priority"
+      },
+      "test_identities": [
+        "A",
+        "B",
+        "M"
+      ],
+      "control_identity": "B",
+      "control_path": "/tickets/901/priority",
+      "visible_policy": "工单 901 归 B 所有，A 只是可查看的协作者。当前 priority 是 normal；把它设成 high 需该工单主人或管理员授权，协作阅读不允许写入。B 可以读取 priority。"
+    },
+    {
+      "pair_id": "T14",
+      "split": "d3_reserved",
+      "public_task_id": "V4D3R-7P2",
+      "target_method": "POST",
+      "target_path": "/tickets/902/escalate",
+      "request_body": null,
+      "target_object": {
+        "kind": "ticket",
+        "id": 902,
+        "field": "priority"
+      },
+      "test_identities": [
+        "A",
+        "B",
+        "M"
+      ],
+      "control_identity": "B",
+      "control_path": "/tickets/902/priority",
+      "visible_policy": "工单 902 归 A 所有，B 可查看当前 normal 优先级。升级到 escalated 是仅管理员 M 能调用的功能；即使是主人 A，普通身份也不能升级。B 可以读取 priority。"
+    },
+    {
+      "pair_id": "T15",
+      "split": "d3_reserved",
+      "public_task_id": "V4D3R-1X6",
+      "target_method": "POST",
+      "target_path": "/tickets/903/priority",
+      "request_body": {
+        "priority": "high"
+      },
+      "target_object": {
+        "kind": "ticket",
+        "id": 903,
+        "field": "priority"
+      },
+      "test_identities": [
+        "A",
+        "B",
+        "M"
+      ],
+      "control_identity": "B",
+      "control_path": "/tickets/903/priority",
+      "visible_policy": "B 是工单 903 的主人，A 得到共享查看权限；priority 初始为 normal。设为 high 属于主人或管理员的写权限，阅读共享不能用于改动。B 可读取 priority。"
+    },
+    {
+      "pair_id": "T16",
+      "split": "d3_reserved",
+      "public_task_id": "V4D3R-8C5",
+      "target_method": "POST",
+      "target_path": "/tickets/904/escalate",
+      "request_body": null,
+      "target_object": {
+        "kind": "ticket",
+        "id": 904,
+        "field": "priority"
+      },
+      "test_identities": [
+        "A",
+        "B",
+        "M"
+      ],
+      "control_identity": "B",
+      "control_path": "/tickets/904/priority",
+      "visible_policy": "工单 904 的主人为 A，B 仅有共享阅读权，priority 初始 normal。escalate 属于只给管理员 M 的业务功能，工单所有权不会赋予 A 该功能。B 可读取 priority。"
+    },
+    {
+      "pair_id": "T17",
+      "split": "d3_reserved",
+      "public_task_id": "V4D3R-0N3",
+      "target_method": "POST",
+      "target_path": "/tickets/905/priority",
+      "request_body": {
+        "priority": "high"
+      },
+      "target_object": {
+        "kind": "ticket",
+        "id": 905,
+        "field": "priority"
+      },
+      "test_identities": [
+        "A",
+        "B",
+        "M"
+      ],
+      "control_identity": "B",
+      "control_path": "/tickets/905/priority",
+      "visible_policy": "工单 905 属于 B，A 被共享了阅读权限，priority 目前 normal。修改到 high 允许主人和管理员执行；A 的共享阅读身份没有更改该工单的权利。B 能读取 priority。"
+    },
+    {
+      "pair_id": "T18",
+      "split": "d3_reserved",
+      "public_task_id": "V4D3R-6H8",
+      "target_method": "POST",
+      "target_path": "/tickets/906/escalate",
+      "request_body": null,
+      "target_object": {
+        "kind": "ticket",
+        "id": 906,
+        "field": "priority"
+      },
+      "test_identities": [
+        "A",
+        "B",
+        "M"
+      ],
+      "control_identity": "B",
+      "control_path": "/tickets/906/priority",
+      "visible_policy": "A 拥有工单 906，B 可共享查看 priority=normal。将优先级提升为 escalated 是管理员 M 专属功能；主人 A 若不是管理员也不获准操作。B 能读取 priority。"
+    },
+    {
+      "pair_id": "E13",
+      "split": "d3_reserved",
+      "public_task_id": "V4D3R-3B7",
+      "target_method": "POST",
+      "target_path": "/claims/1001/change_cost_center",
+      "request_body": {
+        "cost_center": "dept-A"
+      },
+      "target_object": {
+        "kind": "claim",
+        "id": 1001,
+        "field": "cost_center"
+      },
+      "test_identities": [
+        "A",
+        "B",
+        "M"
+      ],
+      "control_identity": "B",
+      "control_path": "/claims/1001/cost_center",
+      "visible_policy": "申请 1001 的主人是 B，A 仅获共享摘要阅读。cost_center 初始 dept-B，处于 submitted；只有申请主人能改成 dept-A，共享查看不含该写操作。B 可读取 cost_center。"
+    },
+    {
+      "pair_id": "E14",
+      "split": "d3_reserved",
+      "public_task_id": "V4D3R-9M1",
+      "target_method": "POST",
+      "target_path": "/claims/1002/mark_reviewed",
+      "request_body": null,
+      "target_object": {
+        "kind": "claim",
+        "id": 1002,
+        "field": "review_state"
+      },
+      "test_identities": [
+        "A",
+        "B",
+        "M"
+      ],
+      "control_identity": "B",
+      "control_path": "/claims/1002/review_state",
+      "visible_policy": "A 拥有申请 1002，B 可以查看摘要和 pending 复核状态。mark_reviewed 是仅财务 M 能使用的功能；即使申请归 A，普通申请人也不得标记 reviewed。B 可读取 review_state。"
+    },
+    {
+      "pair_id": "E15",
+      "split": "d3_reserved",
+      "public_task_id": "V4D3R-5Q4",
+      "target_method": "POST",
+      "target_path": "/claims/1003/change_cost_center",
+      "request_body": {
+        "cost_center": "dept-A"
+      },
+      "target_object": {
+        "kind": "claim",
+        "id": 1003,
+        "field": "cost_center"
+      },
+      "test_identities": [
+        "A",
+        "B",
+        "M"
+      ],
+      "control_identity": "B",
+      "control_path": "/claims/1003/cost_center",
+      "visible_policy": "申请 1003 归 B，A 是共享摘要读者，cost_center 当前 dept-B 且状态 submitted。改到 dept-A 要求主人身份；摘要阅读权限并不带来成本中心写入权。B 可读取 cost_center。"
+    },
+    {
+      "pair_id": "E16",
+      "split": "d3_reserved",
+      "public_task_id": "V4D3R-2S0",
+      "target_method": "POST",
+      "target_path": "/claims/1004/mark_reviewed",
+      "request_body": null,
+      "target_object": {
+        "kind": "claim",
+        "id": 1004,
+        "field": "review_state"
+      },
+      "test_identities": [
+        "A",
+        "B",
+        "M"
+      ],
+      "control_identity": "B",
+      "control_path": "/claims/1004/review_state",
+      "visible_policy": "申请 1004 属于 A，B 仅能阅读摘要，review_state 初始 pending。审核标记只开放给财务 M，主人 A 不能代替财务执行 mark_reviewed。B 可读取 review_state。"
+    },
+    {
+      "pair_id": "E17",
+      "split": "d3_reserved",
+      "public_task_id": "V4D3R-7V6",
+      "target_method": "POST",
+      "target_path": "/claims/1005/change_cost_center",
+      "request_body": {
+        "cost_center": "dept-A"
+      },
+      "target_object": {
+        "kind": "claim",
+        "id": 1005,
+        "field": "cost_center"
+      },
+      "test_identities": [
+        "A",
+        "B",
+        "M"
+      ],
+      "control_identity": "B",
+      "control_path": "/claims/1005/cost_center",
+      "visible_policy": "B 拥有申请 1005，A 只能看共享摘要，cost_center 从 dept-B 开始且尚处 submitted。改为 dept-A 是申请主人才能执行的动作，共享读者不得更改。B 可读取 cost_center。"
+    },
+    {
+      "pair_id": "E18",
+      "split": "d3_reserved",
+      "public_task_id": "V4D3R-1J8",
+      "target_method": "POST",
+      "target_path": "/claims/1006/mark_reviewed",
+      "request_body": null,
+      "target_object": {
+        "kind": "claim",
+        "id": 1006,
+        "field": "review_state"
+      },
+      "test_identities": [
+        "A",
+        "B",
+        "M"
+      ],
+      "control_identity": "B",
+      "control_path": "/claims/1006/review_state",
+      "visible_policy": "申请 1006 的主人是 A，B 可阅读 pending 复核状态。将其标记 reviewed 属于财务 M 的专属功能；申请主人 A 不具财务角色时不能调用。B 可读取 review_state。"
+    }
+  ]
+}
