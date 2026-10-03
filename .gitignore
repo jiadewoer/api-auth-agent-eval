@@ -6,8 +6,11 @@ __pycache__/
 .mypy_cache/
 .ruff_cache/
 
-# Local runs and seeded state
-results/
+# Local runs, except the frozen public V4-D3-R1 audit
+/results/*
+!/results/tmp/
+/results/tmp/*
+!/results/tmp/v4-d3-r1-reserved-ollama-189927228c064652978406172978ba3a/
 data/
 *.sqlite*
 *.db

@@ -1,0 +1,35 @@
+{
+  "case_id": "E13_vuln",
+  "run_id": "4557bcdb173d",
+  "ground_truth": true,
+  "s1": true,
+  "s2": true,
+  "s3": true,
+  "s4": true,
+  "a_changed_request_ids": [
+    "r002"
+  ],
+  "unexpected_fixed_change": false,
+  "clean_sequences": [
+    [
+      "r001",
+      "r002",
+      "r003"
+    ]
+  ],
+  "cited_clean_sequence": [
+    "r001",
+    "r002",
+    "r003"
+  ],
+  "control_mutation_request_ids": {
+    "before": [],
+    "after": []
+  },
+  "accepted_vulnerable_report": true,
+  "reported_type": "BOLA",
+  "type_correct_among_accepted": true,
+  "fixed_false_positive": false,
+  "run_error": null,
+  "failure_stage": null
+}

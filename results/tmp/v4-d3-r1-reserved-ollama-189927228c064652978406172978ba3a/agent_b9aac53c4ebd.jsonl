@@ -1,0 +1,2 @@
+{"run_id": "b9aac53c4ebd", "step": 1, "tool_name": "model_decision", "arguments": {"count": 1}, "identity": null, "request_id": null, "response_status": null, "response_body": null, "elapsed_ms": 120006.226, "error": "MODEL_TIMEOUT"}
+{"run_id": "b9aac53c4ebd", "step": 2, "tool_name": "run_error", "arguments": {"category": "model_timeout"}, "identity": null, "request_id": null, "response_status": null, "response_body": null, "elapsed_ms": 0.0, "error": "MODEL_TIMEOUT"}

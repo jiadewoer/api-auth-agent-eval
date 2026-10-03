@@ -1,0 +1,28 @@
+{
+  "case_id": "E13_vuln",
+  "run_id": "e7bb3f058602",
+  "ground_truth": true,
+  "s1": true,
+  "s2": false,
+  "s3": false,
+  "s4": false,
+  "a_changed_request_ids": [
+    "r001"
+  ],
+  "unexpected_fixed_change": false,
+  "clean_sequences": [],
+  "cited_clean_sequence": null,
+  "control_mutation_request_ids": {
+    "before": [],
+    "after": []
+  },
+  "accepted_vulnerable_report": false,
+  "reported_type": null,
+  "type_correct_among_accepted": null,
+  "fixed_false_positive": false,
+  "run_error": {
+    "category": "model_output_error",
+    "code": "REPEATED_UNPARSED_TEXT"
+  },
+  "failure_stage": "S2"
+}

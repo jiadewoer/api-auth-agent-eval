@@ -1,0 +1,55 @@
+{
+  "run_id": "a0827752f575",
+  "case_id": "T15_fixed",
+  "app_id": "ticket_lab_v4",
+  "condition": "R1C1",
+  "public_task_id": "V4D3R-1X6",
+  "status": "submitted",
+  "run_error": null,
+  "finding": {
+    "verdict": "not_vulnerable",
+    "vulnerability_type": null,
+    "identity": "A",
+    "resource": "ticket_903",
+    "evidence_request_ids": [
+      "r001",
+      "r002",
+      "r003"
+    ],
+    "explanation": "A's POST request to set priority to high was denied (403) and the state remained unchanged (normal) after B's re-read. This matches the visible policy that only owner/admin can modify priority."
+  },
+  "api_requests": 3,
+  "model_decisions": 2,
+  "gate_rejections": 0,
+  "write_observations": [
+    {
+      "run_id": "a0827752f575",
+      "request_id": "r002",
+      "identity": "A",
+      "method": "POST",
+      "path": "/tickets/903/priority",
+      "table": "tickets",
+      "object_id": 903,
+      "field": "priority",
+      "before": "normal",
+      "after": "normal"
+    }
+  ],
+  "duration_s": 32.947,
+  "config": {
+    "model": "qwen3:8b",
+    "temperature": 0.2,
+    "num_ctx": 4096,
+    "request_limit": 8,
+    "decision_limit": 16,
+    "prompt_sha256": "c6bc8a4009d0caf55db2fdbd6fe18d9c112a1ace19bf3f644939fcd82026b25f"
+  },
+  "runtime": {
+    "model": "qwen3:8b",
+    "model_digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+    "provider": "ollama"
+  },
+  "log_path": "results\\tmp\\v4-d3-r1-reserved-ollama-189927228c064652978406172978ba3a\\agent_a0827752f575.jsonl",
+  "db_path": "results\\tmp\\v4-d3-r1-reserved-ollama-189927228c064652978406172978ba3a\\agent_a0827752f575.sqlite",
+  "result_path": "results\\tmp\\v4-d3-r1-reserved-ollama-189927228c064652978406172978ba3a\\agent_a0827752f575.json"
+}

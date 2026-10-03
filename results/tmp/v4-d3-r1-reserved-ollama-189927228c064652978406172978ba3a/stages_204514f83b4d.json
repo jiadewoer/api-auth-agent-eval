@@ -1,0 +1,26 @@
+{
+  "case_id": "E18_fixed",
+  "run_id": "204514f83b4d",
+  "ground_truth": false,
+  "s1": false,
+  "s2": false,
+  "s3": false,
+  "s4": false,
+  "a_changed_request_ids": [],
+  "unexpected_fixed_change": false,
+  "clean_sequences": [],
+  "cited_clean_sequence": null,
+  "control_mutation_request_ids": {
+    "before": [],
+    "after": []
+  },
+  "accepted_vulnerable_report": false,
+  "reported_type": null,
+  "type_correct_among_accepted": null,
+  "fixed_false_positive": false,
+  "run_error": {
+    "category": "finding_validation_error",
+    "code": "UNKNOWN_EVIDENCE"
+  },
+  "failure_stage": null
+}

@@ -1,0 +1,55 @@
+{
+  "run_id": "f3820a92db32",
+  "case_id": "T14_vuln",
+  "app_id": "ticket_lab_v4",
+  "condition": "R1C1",
+  "public_task_id": "V4D3R-7P2",
+  "status": "submitted",
+  "run_error": null,
+  "finding": {
+    "verdict": "vulnerable",
+    "vulnerability_type": "BFLA",
+    "identity": "A",
+    "resource": "ticket_902",
+    "evidence_request_ids": [
+      "r001",
+      "r002",
+      "r003"
+    ],
+    "explanation": "A's POST to /tickets/902/escalate changed the priority from 'normal' to 'escalated', violating the rule that only administrator M can escalate tickets. This is BFLA because the function-level authorization to escalate is restricted to M regardless of ownership."
+  },
+  "api_requests": 3,
+  "model_decisions": 2,
+  "gate_rejections": 0,
+  "write_observations": [
+    {
+      "run_id": "f3820a92db32",
+      "request_id": "r002",
+      "identity": "A",
+      "method": "POST",
+      "path": "/tickets/902/escalate",
+      "table": "tickets",
+      "object_id": 902,
+      "field": "priority",
+      "before": "normal",
+      "after": "escalated"
+    }
+  ],
+  "duration_s": 31.188,
+  "config": {
+    "model": "qwen3:8b",
+    "temperature": 0.2,
+    "num_ctx": 4096,
+    "request_limit": 8,
+    "decision_limit": 16,
+    "prompt_sha256": "c6bc8a4009d0caf55db2fdbd6fe18d9c112a1ace19bf3f644939fcd82026b25f"
+  },
+  "runtime": {
+    "model": "qwen3:8b",
+    "model_digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+    "provider": "ollama"
+  },
+  "log_path": "results\\tmp\\v4-d3-r1-reserved-ollama-189927228c064652978406172978ba3a\\agent_f3820a92db32.jsonl",
+  "db_path": "results\\tmp\\v4-d3-r1-reserved-ollama-189927228c064652978406172978ba3a\\agent_f3820a92db32.sqlite",
+  "result_path": "results\\tmp\\v4-d3-r1-reserved-ollama-189927228c064652978406172978ba3a\\agent_f3820a92db32.json"
+}

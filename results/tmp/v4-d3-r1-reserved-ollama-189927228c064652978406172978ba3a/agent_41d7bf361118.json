@@ -1,0 +1,47 @@
+{
+  "run_id": "41d7bf361118",
+  "case_id": "T13_fixed",
+  "app_id": "ticket_lab_v4",
+  "condition": "R0C1",
+  "public_task_id": "V4D3R-4K9",
+  "status": "run_error",
+  "run_error": {
+    "category": "model_output_error",
+    "code": "REPEATED_EVIDENCE_REJECTION"
+  },
+  "finding": null,
+  "api_requests": 3,
+  "model_decisions": 11,
+  "gate_rejections": 7,
+  "write_observations": [
+    {
+      "run_id": "41d7bf361118",
+      "request_id": "r001",
+      "identity": "A",
+      "method": "POST",
+      "path": "/tickets/901/priority",
+      "table": "tickets",
+      "object_id": 901,
+      "field": "priority",
+      "before": "normal",
+      "after": "normal"
+    }
+  ],
+  "duration_s": 180.454,
+  "config": {
+    "model": "qwen3:8b",
+    "temperature": 0.2,
+    "num_ctx": 4096,
+    "request_limit": 8,
+    "decision_limit": 16,
+    "prompt_sha256": "92163b1e407224ae4da9802a48a7aee1d37fc1e75def1c44be30c2351cc2bc6b"
+  },
+  "runtime": {
+    "model": "qwen3:8b",
+    "model_digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+    "provider": "ollama"
+  },
+  "log_path": "results\\tmp\\v4-d3-r1-reserved-ollama-189927228c064652978406172978ba3a\\agent_41d7bf361118.jsonl",
+  "db_path": "results\\tmp\\v4-d3-r1-reserved-ollama-189927228c064652978406172978ba3a\\agent_41d7bf361118.sqlite",
+  "result_path": "results\\tmp\\v4-d3-r1-reserved-ollama-189927228c064652978406172978ba3a\\agent_41d7bf361118.json"
+}

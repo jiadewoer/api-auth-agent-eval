@@ -1,0 +1,54 @@
+{
+  "run_id": "1a6de11422a6",
+  "case_id": "E16_fixed",
+  "app_id": "expense_lab_v4",
+  "condition": "R0C0",
+  "public_task_id": "V4D3R-2S0",
+  "status": "submitted",
+  "run_error": null,
+  "finding": {
+    "verdict": "insufficient_evidence",
+    "vulnerability_type": null,
+    "identity": "B",
+    "resource": "claim_1004",
+    "evidence_request_ids": [
+      "r001",
+      "r002"
+    ],
+    "explanation": "A's POST to /claims/1004/mark_reviewed was denied (403), confirming ownership restrictions. B's GET to /claims/1004/review_state succeeded (200), confirming read access. M's POST to /claims/1004/mark_reviewed failed due to malformed tool call (INVALID_ARGUMENTS), not API response. No valid evidence exists to confirm or deny M's access rights."
+  },
+  "api_requests": 2,
+  "model_decisions": 2,
+  "gate_rejections": 0,
+  "write_observations": [
+    {
+      "run_id": "1a6de11422a6",
+      "request_id": "r002",
+      "identity": "A",
+      "method": "POST",
+      "path": "/claims/1004/mark_reviewed",
+      "table": "claims",
+      "object_id": 1004,
+      "field": "review_state",
+      "before": "pending",
+      "after": "pending"
+    }
+  ],
+  "duration_s": 45.432,
+  "config": {
+    "model": "qwen3:8b",
+    "temperature": 0.2,
+    "num_ctx": 4096,
+    "request_limit": 8,
+    "decision_limit": 16,
+    "prompt_sha256": "e0cbc1a903d43533538c7c29b10ecaacd042fc5c7b55968112dcb6d5ffdddca8"
+  },
+  "runtime": {
+    "model": "qwen3:8b",
+    "model_digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+    "provider": "ollama"
+  },
+  "log_path": "results\\tmp\\v4-d3-r1-reserved-ollama-189927228c064652978406172978ba3a\\agent_1a6de11422a6.jsonl",
+  "db_path": "results\\tmp\\v4-d3-r1-reserved-ollama-189927228c064652978406172978ba3a\\agent_1a6de11422a6.sqlite",
+  "result_path": "results\\tmp\\v4-d3-r1-reserved-ollama-189927228c064652978406172978ba3a\\agent_1a6de11422a6.json"
+}

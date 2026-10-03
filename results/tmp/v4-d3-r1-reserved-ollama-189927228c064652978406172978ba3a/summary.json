@@ -1,0 +1,542 @@
+{
+  "phase": "V4_D3_reserved_evaluation",
+  "protocol_id": "V4-D3-R1",
+  "provider": "ollama",
+  "split": "d3_reserved",
+  "planned": 192,
+  "rows": 192,
+  "new_rows": 192,
+  "skipped": 0,
+  "independent_pairs": 12,
+  "repeats_per_case_version_condition": 2,
+  "run_errors": 85,
+  "error_categories": {
+    "model_output_error": 46,
+    "tool_parameter_error": 20,
+    "finding_validation_error": 12,
+    "budget_exceeded": 3,
+    "model_timeout": 2,
+    "no_conclusion": 2
+  },
+  "manifest_sha256": "2ab27433512d9f1cd68daf1371191e5f6422684e2ded82aa8d91b74d858d18da",
+  "results_sha256": "d73a0d9a10209e706a6ffab18a1a31d35912ce5f489575c6207449e5ddf116eb",
+  "per_condition": {
+    "R0C0": {
+      "planned": 48,
+      "vulnerable_rows": 24,
+      "fixed_rows": 24,
+      "stage_counts": {
+        "s1": [
+          20,
+          24
+        ],
+        "s2": [
+          1,
+          24
+        ],
+        "s3": [
+          1,
+          24
+        ],
+        "s4": [
+          1,
+          24
+        ]
+      },
+      "fixed_false_positives": [
+        0,
+        24
+      ],
+      "fixed_correct": [
+        1,
+        24
+      ],
+      "paired_success": [
+        0,
+        24
+      ],
+      "submitted": [
+        6,
+        48
+      ],
+      "run_errors": [
+        42,
+        48
+      ],
+      "error_categories": {
+        "model_output_error": 26,
+        "finding_validation_error": 11,
+        "tool_parameter_error": 1,
+        "model_timeout": 2,
+        "no_conclusion": 2
+      },
+      "mean_api_requests": 3.354,
+      "mean_duration_s": 160.205,
+      "gate_rejections": 213
+    },
+    "R1C0": {
+      "planned": 48,
+      "vulnerable_rows": 24,
+      "fixed_rows": 24,
+      "stage_counts": {
+        "s1": [
+          24,
+          24
+        ],
+        "s2": [
+          24,
+          24
+        ],
+        "s3": [
+          24,
+          24
+        ],
+        "s4": [
+          8,
+          24
+        ]
+      },
+      "fixed_false_positives": [
+        0,
+        24
+      ],
+      "fixed_correct": [
+        24,
+        24
+      ],
+      "paired_success": [
+        8,
+        24
+      ],
+      "submitted": [
+        48,
+        48
+      ],
+      "run_errors": [
+        0,
+        48
+      ],
+      "error_categories": {},
+      "mean_api_requests": 3.0,
+      "mean_duration_s": 50.045,
+      "gate_rejections": 0
+    },
+    "R0C1": {
+      "planned": 48,
+      "vulnerable_rows": 24,
+      "fixed_rows": 24,
+      "stage_counts": {
+        "s1": [
+          22,
+          24
+        ],
+        "s2": [
+          2,
+          24
+        ],
+        "s3": [
+          2,
+          24
+        ],
+        "s4": [
+          2,
+          24
+        ]
+      },
+      "fixed_false_positives": [
+        0,
+        24
+      ],
+      "fixed_correct": [
+        2,
+        24
+      ],
+      "paired_success": [
+        0,
+        24
+      ],
+      "submitted": [
+        5,
+        48
+      ],
+      "run_errors": [
+        43,
+        48
+      ],
+      "error_categories": {
+        "model_output_error": 20,
+        "tool_parameter_error": 19,
+        "budget_exceeded": 3,
+        "finding_validation_error": 1
+      },
+      "mean_api_requests": 2.792,
+      "mean_duration_s": 86.057,
+      "gate_rejections": 109
+    },
+    "R1C1": {
+      "planned": 48,
+      "vulnerable_rows": 24,
+      "fixed_rows": 24,
+      "stage_counts": {
+        "s1": [
+          24,
+          24
+        ],
+        "s2": [
+          24,
+          24
+        ],
+        "s3": [
+          24,
+          24
+        ],
+        "s4": [
+          22,
+          24
+        ]
+      },
+      "fixed_false_positives": [
+        0,
+        24
+      ],
+      "fixed_correct": [
+        24,
+        24
+      ],
+      "paired_success": [
+        22,
+        24
+      ],
+      "submitted": [
+        48,
+        48
+      ],
+      "run_errors": [
+        0,
+        48
+      ],
+      "error_categories": {},
+      "mean_api_requests": 3.0,
+      "mean_duration_s": 37.831,
+      "gate_rejections": 0
+    }
+  },
+  "per_pair": {
+    "T13": {
+      "R0C0": {
+        "vulnerable_s4": 0,
+        "fixed_correct": 0,
+        "fixed_false_positives": 0,
+        "run_errors": 3
+      },
+      "R1C0": {
+        "vulnerable_s4": 0,
+        "fixed_correct": 2,
+        "fixed_false_positives": 0,
+        "run_errors": 0
+      },
+      "R0C1": {
+        "vulnerable_s4": 0,
+        "fixed_correct": 1,
+        "fixed_false_positives": 0,
+        "run_errors": 3
+      },
+      "R1C1": {
+        "vulnerable_s4": 2,
+        "fixed_correct": 2,
+        "fixed_false_positives": 0,
+        "run_errors": 0
+      }
+    },
+    "T14": {
+      "R0C0": {
+        "vulnerable_s4": 0,
+        "fixed_correct": 0,
+        "fixed_false_positives": 0,
+        "run_errors": 4
+      },
+      "R1C0": {
+        "vulnerable_s4": 0,
+        "fixed_correct": 2,
+        "fixed_false_positives": 0,
+        "run_errors": 0
+      },
+      "R0C1": {
+        "vulnerable_s4": 0,
+        "fixed_correct": 1,
+        "fixed_false_positives": 0,
+        "run_errors": 3
+      },
+      "R1C1": {
+        "vulnerable_s4": 2,
+        "fixed_correct": 2,
+        "fixed_false_positives": 0,
+        "run_errors": 0
+      }
+    },
+    "T15": {
+      "R0C0": {
+        "vulnerable_s4": 0,
+        "fixed_correct": 0,
+        "fixed_false_positives": 0,
+        "run_errors": 4
+      },
+      "R1C0": {
+        "vulnerable_s4": 2,
+        "fixed_correct": 2,
+        "fixed_false_positives": 0,
+        "run_errors": 0
+      },
+      "R0C1": {
+        "vulnerable_s4": 0,
+        "fixed_correct": 0,
+        "fixed_false_positives": 0,
+        "run_errors": 4
+      },
+      "R1C1": {
+        "vulnerable_s4": 2,
+        "fixed_correct": 2,
+        "fixed_false_positives": 0,
+        "run_errors": 0
+      }
+    },
+    "T16": {
+      "R0C0": {
+        "vulnerable_s4": 0,
+        "fixed_correct": 0,
+        "fixed_false_positives": 0,
+        "run_errors": 3
+      },
+      "R1C0": {
+        "vulnerable_s4": 0,
+        "fixed_correct": 2,
+        "fixed_false_positives": 0,
+        "run_errors": 0
+      },
+      "R0C1": {
+        "vulnerable_s4": 0,
+        "fixed_correct": 0,
+        "fixed_false_positives": 0,
+        "run_errors": 4
+      },
+      "R1C1": {
+        "vulnerable_s4": 2,
+        "fixed_correct": 2,
+        "fixed_false_positives": 0,
+        "run_errors": 0
+      }
+    },
+    "T17": {
+      "R0C0": {
+        "vulnerable_s4": 0,
+        "fixed_correct": 0,
+        "fixed_false_positives": 0,
+        "run_errors": 3
+      },
+      "R1C0": {
+        "vulnerable_s4": 2,
+        "fixed_correct": 2,
+        "fixed_false_positives": 0,
+        "run_errors": 0
+      },
+      "R0C1": {
+        "vulnerable_s4": 0,
+        "fixed_correct": 0,
+        "fixed_false_positives": 0,
+        "run_errors": 4
+      },
+      "R1C1": {
+        "vulnerable_s4": 2,
+        "fixed_correct": 2,
+        "fixed_false_positives": 0,
+        "run_errors": 0
+      }
+    },
+    "T18": {
+      "R0C0": {
+        "vulnerable_s4": 0,
+        "fixed_correct": 1,
+        "fixed_false_positives": 0,
+        "run_errors": 3
+      },
+      "R1C0": {
+        "vulnerable_s4": 0,
+        "fixed_correct": 2,
+        "fixed_false_positives": 0,
+        "run_errors": 0
+      },
+      "R0C1": {
+        "vulnerable_s4": 0,
+        "fixed_correct": 0,
+        "fixed_false_positives": 0,
+        "run_errors": 3
+      },
+      "R1C1": {
+        "vulnerable_s4": 2,
+        "fixed_correct": 2,
+        "fixed_false_positives": 0,
+        "run_errors": 0
+      }
+    },
+    "E13": {
+      "R0C0": {
+        "vulnerable_s4": 0,
+        "fixed_correct": 0,
+        "fixed_false_positives": 0,
+        "run_errors": 4
+      },
+      "R1C0": {
+        "vulnerable_s4": 2,
+        "fixed_correct": 2,
+        "fixed_false_positives": 0,
+        "run_errors": 0
+      },
+      "R0C1": {
+        "vulnerable_s4": 0,
+        "fixed_correct": 0,
+        "fixed_false_positives": 0,
+        "run_errors": 4
+      },
+      "R1C1": {
+        "vulnerable_s4": 2,
+        "fixed_correct": 2,
+        "fixed_false_positives": 0,
+        "run_errors": 0
+      }
+    },
+    "E14": {
+      "R0C0": {
+        "vulnerable_s4": 0,
+        "fixed_correct": 0,
+        "fixed_false_positives": 0,
+        "run_errors": 4
+      },
+      "R1C0": {
+        "vulnerable_s4": 0,
+        "fixed_correct": 2,
+        "fixed_false_positives": 0,
+        "run_errors": 0
+      },
+      "R0C1": {
+        "vulnerable_s4": 2,
+        "fixed_correct": 0,
+        "fixed_false_positives": 0,
+        "run_errors": 2
+      },
+      "R1C1": {
+        "vulnerable_s4": 1,
+        "fixed_correct": 2,
+        "fixed_false_positives": 0,
+        "run_errors": 0
+      }
+    },
+    "E15": {
+      "R0C0": {
+        "vulnerable_s4": 0,
+        "fixed_correct": 0,
+        "fixed_false_positives": 0,
+        "run_errors": 4
+      },
+      "R1C0": {
+        "vulnerable_s4": 2,
+        "fixed_correct": 2,
+        "fixed_false_positives": 0,
+        "run_errors": 0
+      },
+      "R0C1": {
+        "vulnerable_s4": 0,
+        "fixed_correct": 0,
+        "fixed_false_positives": 0,
+        "run_errors": 4
+      },
+      "R1C1": {
+        "vulnerable_s4": 2,
+        "fixed_correct": 2,
+        "fixed_false_positives": 0,
+        "run_errors": 0
+      }
+    },
+    "E16": {
+      "R0C0": {
+        "vulnerable_s4": 0,
+        "fixed_correct": 0,
+        "fixed_false_positives": 0,
+        "run_errors": 3
+      },
+      "R1C0": {
+        "vulnerable_s4": 0,
+        "fixed_correct": 2,
+        "fixed_false_positives": 0,
+        "run_errors": 0
+      },
+      "R0C1": {
+        "vulnerable_s4": 0,
+        "fixed_correct": 0,
+        "fixed_false_positives": 0,
+        "run_errors": 4
+      },
+      "R1C1": {
+        "vulnerable_s4": 1,
+        "fixed_correct": 2,
+        "fixed_false_positives": 0,
+        "run_errors": 0
+      }
+    },
+    "E17": {
+      "R0C0": {
+        "vulnerable_s4": 0,
+        "fixed_correct": 0,
+        "fixed_false_positives": 0,
+        "run_errors": 4
+      },
+      "R1C0": {
+        "vulnerable_s4": 0,
+        "fixed_correct": 2,
+        "fixed_false_positives": 0,
+        "run_errors": 0
+      },
+      "R0C1": {
+        "vulnerable_s4": 0,
+        "fixed_correct": 0,
+        "fixed_false_positives": 0,
+        "run_errors": 4
+      },
+      "R1C1": {
+        "vulnerable_s4": 2,
+        "fixed_correct": 2,
+        "fixed_false_positives": 0,
+        "run_errors": 0
+      }
+    },
+    "E18": {
+      "R0C0": {
+        "vulnerable_s4": 1,
+        "fixed_correct": 0,
+        "fixed_false_positives": 0,
+        "run_errors": 3
+      },
+      "R1C0": {
+        "vulnerable_s4": 0,
+        "fixed_correct": 2,
+        "fixed_false_positives": 0,
+        "run_errors": 0
+      },
+      "R0C1": {
+        "vulnerable_s4": 0,
+        "fixed_correct": 0,
+        "fixed_false_positives": 0,
+        "run_errors": 4
+      },
+      "R1C1": {
+        "vulnerable_s4": 2,
+        "fixed_correct": 2,
+        "fixed_false_positives": 0,
+        "run_errors": 0
+      }
+    }
+  },
+  "output": "results\\tmp\\v4-d3-r1-reserved-ollama-189927228c064652978406172978ba3a",
+  "manifest_path": "results\\tmp\\v4-d3-r1-reserved-ollama-189927228c064652978406172978ba3a\\experiment_manifest.json",
+  "results_path": "results\\tmp\\v4-d3-r1-reserved-ollama-189927228c064652978406172978ba3a\\results.jsonl",
+  "interpretation": "D3 reserved evaluation: twelve independent pairs sharing four route families, not 192 independent systems. Run errors and fixed-case non-completions remain in denominators."
+}

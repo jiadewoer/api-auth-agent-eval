@@ -1,0 +1,55 @@
+{
+  "run_id": "7114f6d0c3b4",
+  "case_id": "E18_fixed",
+  "app_id": "expense_lab_v4",
+  "condition": "R1C1",
+  "public_task_id": "V4D3R-1J8",
+  "status": "submitted",
+  "run_error": null,
+  "finding": {
+    "verdict": "not_vulnerable",
+    "vulnerability_type": null,
+    "identity": "A",
+    "resource": "claim_1006",
+    "evidence_request_ids": [
+      "r001",
+      "r002",
+      "r003"
+    ],
+    "explanation": "A's POST request to mark as reviewed was denied (403), and the review_state remained 'pending' after the attempt. This aligns with the policy that only M (financial) can perform this action, and A lacks the required role."
+  },
+  "api_requests": 3,
+  "model_decisions": 2,
+  "gate_rejections": 0,
+  "write_observations": [
+    {
+      "run_id": "7114f6d0c3b4",
+      "request_id": "r002",
+      "identity": "A",
+      "method": "POST",
+      "path": "/claims/1006/mark_reviewed",
+      "table": "claims",
+      "object_id": 1006,
+      "field": "review_state",
+      "before": "pending",
+      "after": "pending"
+    }
+  ],
+  "duration_s": 38.383,
+  "config": {
+    "model": "qwen3:8b",
+    "temperature": 0.2,
+    "num_ctx": 4096,
+    "request_limit": 8,
+    "decision_limit": 16,
+    "prompt_sha256": "c6bc8a4009d0caf55db2fdbd6fe18d9c112a1ace19bf3f644939fcd82026b25f"
+  },
+  "runtime": {
+    "model": "qwen3:8b",
+    "model_digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+    "provider": "ollama"
+  },
+  "log_path": "results\\tmp\\v4-d3-r1-reserved-ollama-189927228c064652978406172978ba3a\\agent_7114f6d0c3b4.jsonl",
+  "db_path": "results\\tmp\\v4-d3-r1-reserved-ollama-189927228c064652978406172978ba3a\\agent_7114f6d0c3b4.sqlite",
+  "result_path": "results\\tmp\\v4-d3-r1-reserved-ollama-189927228c064652978406172978ba3a\\agent_7114f6d0c3b4.json"
+}

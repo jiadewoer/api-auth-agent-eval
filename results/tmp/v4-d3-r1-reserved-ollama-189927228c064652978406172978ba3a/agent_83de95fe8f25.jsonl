@@ -1,0 +1,3 @@
+{"run_id": "83de95fe8f25", "step": 1, "tool_name": "model_decision", "arguments": {"count": 1}, "identity": null, "request_id": null, "response_status": null, "response_body": null, "elapsed_ms": 21020.777, "error": null}
+{"run_id": "83de95fe8f25", "step": 2, "tool_name": "inspect_response", "arguments": {"request_id": "A_request_id"}, "identity": null, "request_id": null, "response_status": null, "response_body": null, "elapsed_ms": 0.0, "error": "UNKNOWN_REQUEST"}
+{"run_id": "83de95fe8f25", "step": 3, "tool_name": "run_error", "arguments": {"category": "tool_parameter_error"}, "identity": null, "request_id": null, "response_status": null, "response_body": null, "elapsed_ms": 0.0, "error": "UNKNOWN_REQUEST"}

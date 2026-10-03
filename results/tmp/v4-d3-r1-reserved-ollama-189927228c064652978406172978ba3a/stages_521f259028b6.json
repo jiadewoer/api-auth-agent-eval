@@ -1,0 +1,26 @@
+{
+  "case_id": "T15_fixed",
+  "run_id": "521f259028b6",
+  "ground_truth": false,
+  "s1": false,
+  "s2": false,
+  "s3": false,
+  "s4": false,
+  "a_changed_request_ids": [],
+  "unexpected_fixed_change": false,
+  "clean_sequences": [],
+  "cited_clean_sequence": null,
+  "control_mutation_request_ids": {
+    "before": [],
+    "after": []
+  },
+  "accepted_vulnerable_report": false,
+  "reported_type": null,
+  "type_correct_among_accepted": null,
+  "fixed_false_positive": false,
+  "run_error": {
+    "category": "model_output_error",
+    "code": "REPEATED_EVIDENCE_REJECTION"
+  },
+  "failure_stage": null
+}

@@ -1,0 +1,55 @@
+{
+  "run_id": "76215d290a24",
+  "case_id": "E16_vuln",
+  "app_id": "expense_lab_v4",
+  "condition": "R1C1",
+  "public_task_id": "V4D3R-2S0",
+  "status": "submitted",
+  "run_error": null,
+  "finding": {
+    "verdict": "vulnerable",
+    "vulnerability_type": "BOLA",
+    "identity": "A",
+    "resource": "claim_1004",
+    "evidence_request_ids": [
+      "r001",
+      "r002",
+      "r003"
+    ],
+    "explanation": "A's POST to /claims/1004/mark_reviewed changed review_state from 'pending' to 'reviewed' despite the visible policy stating only M can execute this action. The control_identity B could read the field before and after, confirming the state change. This violates the '主人 A 不能代替财务执行 mark_reviewed' rule, which is an object-level authorization boundary."
+  },
+  "api_requests": 3,
+  "model_decisions": 2,
+  "gate_rejections": 0,
+  "write_observations": [
+    {
+      "run_id": "76215d290a24",
+      "request_id": "r002",
+      "identity": "A",
+      "method": "POST",
+      "path": "/claims/1004/mark_reviewed",
+      "table": "claims",
+      "object_id": 1004,
+      "field": "review_state",
+      "before": "pending",
+      "after": "reviewed"
+    }
+  ],
+  "duration_s": 34.362,
+  "config": {
+    "model": "qwen3:8b",
+    "temperature": 0.2,
+    "num_ctx": 4096,
+    "request_limit": 8,
+    "decision_limit": 16,
+    "prompt_sha256": "c6bc8a4009d0caf55db2fdbd6fe18d9c112a1ace19bf3f644939fcd82026b25f"
+  },
+  "runtime": {
+    "model": "qwen3:8b",
+    "model_digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+    "provider": "ollama"
+  },
+  "log_path": "results\\tmp\\v4-d3-r1-reserved-ollama-189927228c064652978406172978ba3a\\agent_76215d290a24.jsonl",
+  "db_path": "results\\tmp\\v4-d3-r1-reserved-ollama-189927228c064652978406172978ba3a\\agent_76215d290a24.sqlite",
+  "result_path": "results\\tmp\\v4-d3-r1-reserved-ollama-189927228c064652978406172978ba3a\\agent_76215d290a24.json"
+}
